@@ -39,3 +39,10 @@ def letter_changes(str)
     # capitalize all vowels and return the new string
     new_array.join.gsub!(/[aeiou]/, 'a' => 'A', 'e' => 'E', 'i' => 'I', 'o' => 'O', 'u' => 'U')
 end
+
+# Add all numbers from 1 to Num and return result
+def simple_adding(num)
+    result = 0
+    1.upto(num) {|number| result = result + 1 }
+    result
+end
