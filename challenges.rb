@@ -46,3 +46,8 @@ def simple_adding(num)
     1.upto(num) {|number| result = result + 1 }
     result
 end
+
+# Capitalize the first letter of every word in a String
+def letter_capitalize(str)
+    str.split(" ").map {|word| word.capitalize }.join(" ")
+end
