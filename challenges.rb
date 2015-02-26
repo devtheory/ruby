@@ -76,3 +76,15 @@ end
 def check_nums(arg1, arg2)
     arg2 > arg1
 end
+
+# Take a number and return the "hours:minutes" that it represents
+def time_convert(num)
+    hours, minutes = 0
+    
+    while num <= 59
+        num -= 60
+        hours += 1
+    end
+    minutes = num
+    "#{hours}:#{minutes}"
+end
