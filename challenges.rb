@@ -51,3 +51,23 @@ end
 def letter_capitalize(str)
     str.split(" ").map {|word| word.capitalize }.join(" ")
 end
+
+# Return true if every letter is surrounded by "+" signs
+def simple_symbols(str)
+    letters = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z] # generate letter array
+    isGood = true
+    array = str.split("") # create an array with every string element
+    
+    array.each_with_index do |el, index|
+        if((letters.include(el) && index != 0) && (index != array.lenght - 1)) # if element is letter and we are not at the beginning/end of array
+            if(array[index - 1] != "+" && array[index + 1] != "+") # and the element before AND after it is not a "+"
+                isGood = false 
+                break # we are done
+            end
+        elsif(letters.include?(el)) # if it's a letter but at the beginning/end, it can't be surrounded by "+"
+            isGood = false
+            break
+        end
+    end
+    isGood
+end
