@@ -71,3 +71,8 @@ def simple_symbols(str)
     end
     isGood
 end
+
+# Return true if num2 > num1
+def check_nums(arg1, arg2)
+    arg2 > arg1
+end
