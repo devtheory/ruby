@@ -88,3 +88,8 @@ def time_convert(num)
     minutes = num
     "#{hours}:#{minutes}"
 end
+
+# Take a string and return it in alphabetical order
+def alphabetical_order(str)
+    str.split('').sort.join
+end
