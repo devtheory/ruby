@@ -1,5 +1,5 @@
-# Queue - A FIFO abstract data type that models a waiting line (like grocery checkout line).
-# It has methods to APPEND, SERVE, IS_EMPTY, FRONT, BACK, SIZE
+# Queue - A FIFO abstract data structure that models a waiting line (like grocery checkout line).
+# It has methods to APPEND, SERVE, IS_EMPTY?, FRONT, BACK, SIZE
 class Queue
   attr_reader :queue # an array to hold the elements
   
@@ -16,18 +16,44 @@ class Queue
   end
   
   def is_empty?
-    queue.length == 0 # checks if the queue is empty to prevent error when serving from empty queue
+    queue.empty?# checks if the queue is empty to prevent error when serving from empty queue
   end
   
   def front
-    queue[-1] # takes a look at the el at the front of the line without serving it
+    queue.last # takes a look at the el at the front of the line without serving it
   end
   
   def back    
-    queue[0]  # takes a look at the el at the back of the line without serving it
+    queue.first  # takes a look at the el at the back of the line without serving it
   end
   
   def size
     queue.length # returns the number of el in the queue
+  end
+end
+
+# Stack - A FILO abstract data structure that models a stack of clean plates in a buffett 
+# It has methods to PUSH, POP, PEEK, IS_EMPTY?
+class Stack
+  attr_reader :stack
+  
+  def initialize
+    @stack = []
+  end
+  
+  def push(el)
+    stack.push(el)
+  end
+  
+  def pop
+    stack.pop unless is_empty?
+  end
+  
+  def peek
+    stack.last
+  end
+  
+  def is_empty?
+    stack.empty?
   end
 end
